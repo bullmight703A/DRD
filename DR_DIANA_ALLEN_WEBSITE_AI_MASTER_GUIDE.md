@@ -42,7 +42,7 @@ Your Responsibilities:
 1. When Diana asks you to change copy, headlines, keynote topics, or books, provide the exact modified HTML snippet or complete updated file.
 2. Always preserve the clean CSS variable structure (--bg, --pink, --ink, --line, etc.).
 3. Never introduce heavy external libraries or frameworks (React, Vue, jQuery) unless explicitly requested; keep the code vanilla, fast, and mobile-responsive.
-4. Ensure all links to Calendly (https://calendly.com/drdianaballen), Amazon, and her social profiles remain properly formatted with target="_blank" and rel="noopener".
+4. Ensure all links to Calendly (https://calendly.com/dianaballen), Amazon, and her social profiles remain properly formatted with target="_blank" and rel="noopener".
 ```
 
 ---
@@ -88,7 +88,7 @@ The website consists of the following key files:
 ├────────────────────────────────────────────────────────────────────────┤
 │ 1. STICKY NAV          • Brand logo ("Dr. Diana B. Allen.")            │
 │                        • Links: About, Focus, Speaking, Books, Advisory│
-│                        • CTA Button: "Book a Call" (Calendly link)     │
+│                        • CTA Button: "Connect with Diana" (Calendly link)     │
 │                                                                        │
 │ 2. HERO SECTION        • Eyebrow: "CYBERSECURITY · AI GOVERNANCE"      │
 │                        • Headline: "Make the Hard Decision Defensible."│
@@ -105,7 +105,7 @@ The website consists of the following key files:
 │                        • 03: Board Governance & Transformation         │
 │                                                                        │
 │ 6. SPEAKING ENGAGEMENTS• Keynote Offerings ("Say the hard part out loud")│
-│                        • Dual CTAs: Book a Call + Speaker Dossier Kit  │
+│                        • Dual CTAs: Connect with Diana + Speaker Dossier Kit  │
 │                        • Secondary High-Res Speaking Portrait          │
 │                                                                        │
 │ 7. BOOKS & PUBLICATIONS• Book 1: "Beyond the Dashboard" (Amazon link)  │
@@ -143,7 +143,7 @@ Here are ready-to-use recipes Diana can give her AI assistant:
         <!-- EDIT SUBTITLE HERE -->
         <p class="sub">I help boards, executives, and agency leaders cut through noise, navigate high-consequence risk, and align technology transformation with regulatory defensibility.</p>
         <div class="hero-ctas">
-          <a class="btn btn-primary" href="https://calendly.com/drdianaballen" target="_blank" rel="noopener">Book a Call</a>
+          <a class="btn btn-primary" href="https://calendly.com/dianaballen" target="_blank" rel="noopener">Connect with Diana</a>
           <a class="btn btn-ghost" href="#focus">Explore Practice Areas</a>
         </div>
       </div>
@@ -192,10 +192,10 @@ Simply replace the `src="..."` attribute with any image URL:
 
 ### Recipe 4: Updating Booking Link / Calendly
 All booking buttons currently point to:  
-`https://calendly.com/drdianaballen`
+`https://calendly.com/dianaballen`
 
 To change this to an executive intake form, HubSpot link, or assistant calendar:
-Find and replace `href="https://calendly.com/drdianaballen"` across `index.html` and `speaker-kit.html`.
+Find and replace `href="https://calendly.com/dianaballen"` across `index.html` and `speaker-kit.html`.
 
 ---
 
@@ -625,7 +625,7 @@ For Diana's AI agent's convenience, here is the full, validated source code of t
         <a href="#speaking">Speaking</a>
         <a href="#books">Books</a>
         <a href="#advisory">Advisory</a>
-        <a class="nav-cta" href="https://calendly.com/drdianaballen" target="_blank" rel="noopener">Book a Call</a>
+        <a class="nav-cta" href="https://calendly.com/dianaballen" target="_blank" rel="noopener">Connect with Diana</a>
       </div>
     </div>
   </nav>
@@ -639,7 +639,7 @@ For Diana's AI agent's convenience, here is the full, validated source code of t
           <h1>Make the Hard Decision <span>Defensible.</span></h1>
           <p class="sub">I help boards, executives, and agency leaders cut through noise, navigate high-consequence risk, and align technology transformation with regulatory defensibility.</p>
           <div class="hero-ctas">
-            <a class="btn btn-primary" href="https://calendly.com/drdianaballen" target="_blank" rel="noopener">Book a Call</a>
+            <a class="btn btn-primary" href="https://calendly.com/dianaballen" target="_blank" rel="noopener">Connect with Diana</a>
             <a class="btn btn-ghost" href="#focus">Explore Practice Areas</a>
             <a class="btn btn-ghost" href="mailto:info@dianaballen.com">info@dianaballen.com</a>
           </div>
@@ -720,7 +720,7 @@ For Diana's AI agent's convenience, here is the full, validated source code of t
           <p class="lede" style="max-width:520px">I speak on the issues leaders are often managing privately but need to address publicly: AI governance, cybersecurity leadership, public-sector trust, regulatory complexity, transformation and the realities of leading high-stakes work.</p>
           <p style="margin-top:16px;font-size:16px">Available for keynotes, panels, executive briefings, fireside conversations, leadership sessions and board-level discussions.</p>
           <div class="speak-ctas">
-            <a class="btn btn-primary" href="https://calendly.com/drdianaballen" target="_blank" rel="noopener">Book a Call</a>
+            <a class="btn btn-primary" href="https://calendly.com/dianaballen" target="_blank" rel="noopener">Connect with Diana</a>
             <a class="btn btn-ghost" href="https://youtube.com/shorts/dzdrfEEKJrY" target="_blank" rel="noopener" style="border-color:var(--pink);color:var(--pink)">Watch Speaker Reel</a>
             <a class="btn btn-ghost" href="/speaker-kit">Speaker Dossier &amp; Kit</a>
             <a class="btn btn-ghost" href="mailto:info@dianaballen.com">info@dianaballen.com</a>
@@ -770,7 +770,7 @@ For Diana's AI agent's convenience, here is the full, validated source code of t
       <p>Advisory and delivery engagements are provided through Allen Leadership Solutions, the firm I founded to help organizations move from complexity to consequential action.</p>
       <div class="btn-row">
         <a class="btn btn-primary" href="https://www.allenleadershipsolutions.com/" target="_blank" rel="noopener">Explore Allen Leadership Solutions</a>
-        <a class="btn btn-ghost" style="border-color:#171412;color:#171412" href="https://calendly.com/drdianaballen" target="_blank" rel="noopener">Book a Call</a>
+        <a class="btn btn-ghost" style="border-color:#171412;color:#171412" href="https://calendly.com/dianaballen" target="_blank" rel="noopener">Connect with Diana</a>
       </div>
     </div>
   </section>
@@ -781,7 +781,7 @@ For Diana's AI agent's convenience, here is the full, validated source code of t
       <h2>Tell me what decision is in front of you.</h2>
       <p>Speaking, executive advisory, media, partnerships, or a complex problem that needs a sharper point of view. Start the conversation.</p>
       <div class="btn-row" style="justify-content:center">
-        <a class="btn btn-primary" href="https://calendly.com/drdianaballen" target="_blank" rel="noopener">Book a Call</a>
+        <a class="btn btn-primary" href="https://calendly.com/dianaballen" target="_blank" rel="noopener">Connect with Diana</a>
         <a class="btn btn-ghost" href="mailto:info@dianaballen.com">Contact Diana</a>
       </div>
     </div>
