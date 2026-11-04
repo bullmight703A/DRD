@@ -67,7 +67,7 @@ Built with pure semantic HTML5, CSS custom properties, and zero heavy frameworks
 
 In `index.html` (under `#books`), the "Get Notified" button for *Beyond the Controls* is currently set to:
 ```html
-<a class="btn btn-primary" href="mailto:diana@dianaballen.com?subject=Beyond%20the%20Controls%20journal">Get Notified</a>
+<a class="btn btn-primary" href="mailto:info@dianaballen.com?subject=Beyond%20the%20Controls%20journal">Get Notified</a>
 ```
 
 ### Recommended Integration Options:
