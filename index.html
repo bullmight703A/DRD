@@ -94,6 +94,56 @@
       font-weight: 500;
     }
     .nav-links a:hover { color: var(--pink); }
+
+    /* Responsive accessible navigation */
+    .mobile-menu { display: none; position: relative; }
+    .mobile-menu summary {
+      display: block;
+      cursor: pointer;
+      padding: 10px 14px;
+      list-style: none;
+      border: 1px solid var(--line);
+      border-radius: 6px;
+      color: var(--ink);
+      font-size: 14.5px;
+      font-weight: 600;
+      user-select: none;
+    }
+    .mobile-menu summary::-webkit-details-marker { display: none; }
+    .mobile-menu summary:focus-visible,
+    .mobile-menu-panel a:focus-visible {
+      outline: 2px solid var(--pink);
+      outline-offset: 3px;
+    }
+    .mobile-menu-panel {
+      position: absolute;
+      top: calc(100% + 10px);
+      right: 0;
+      display: flex;
+      flex-direction: column;
+      gap: 3px;
+      width: min(80vw, 320px);
+      max-height: calc(100dvh - 100px);
+      overflow-y: auto;
+      padding: 12px;
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: 10px;
+      box-shadow: 0 16px 36px rgba(0,0,0,.45);
+      z-index: 200;
+    }
+    .mobile-menu-panel a {
+      display: block;
+      padding: 10px 12px;
+      border-radius: 6px;
+      color: var(--ink);
+      font-size: 15px;
+    }
+    .mobile-menu-panel a:hover {
+      color: var(--pink);
+      background: var(--bg);
+    }
+    .mobile-menu-panel .nav-cta { text-align: center; margin-top: 6px; }
     .nav-cta {
       background: var(--pink);
       color: #fff !important;
@@ -396,6 +446,8 @@
     .advisory .eyebrow::before { background: var(--pink); }
     .advisory p { font-size: 18.5px; max-width: 720px; }
     .advisory p + p { margin-top: 18px; }
+    .advisory .btn-ghost { color: #171412; border-color: #171412; }
+    .advisory .btn-ghost:hover { color: var(--pink-hover); border-color: var(--pink-hover); }
     .btn-row { display: flex; gap: 16px; flex-wrap: wrap; margin-top: 36px; }
 
     /* FINAL CTA */
@@ -440,6 +492,7 @@
       .focus-grid, .insight-grid { grid-template-columns: 1fr; }
       .exp-item { grid-template-columns: 1fr; gap: 8px; }
       .nav-links { display: none; }
+      .mobile-menu { display: block; }
       section { padding: 72px 0; }
       .hero { padding: 56px 0; }
       .hero-photo::after { display: none; }
@@ -461,6 +514,18 @@
         <a href="#advisory">Advisory</a>
         <a class="nav-cta" href="https://calendly.com/drdianaballen" target="_blank" rel="noopener">Book a Call</a>
       </div>
+      <details class="mobile-menu">
+        <summary>Menu</summary>
+        <div class="mobile-menu-panel">
+          <a href="#about">About</a>
+          <a href="#focus">Focus</a>
+          <a href="#insights">Insights</a>
+          <a href="#speaking">Speaking</a>
+          <a href="#books">Books</a>
+          <a href="#advisory">Advisory</a>
+          <a class="nav-cta" href="https://calendly.com/drdianaballen" target="_blank" rel="noopener">Book a Call</a>
+        </div>
+      </details>
     </div>
   </nav>
 
@@ -474,9 +539,9 @@
         <div class="hero-ctas">
           <a class="btn btn-primary" href="#insights">Explore My Work</a>
           <a class="btn btn-ghost" href="https://calendly.com/drdianaballen" target="_blank" rel="noopener">Book a Call</a>
-          <a class="btn btn-ghost" href="mailto:diana@dianaballen.com" style="display:inline-flex;align-items:center;gap:8px" title="Direct Email">
+          <a class="btn btn-ghost" href="mailto:info@dianaballen.com" style="display:inline-flex;align-items:center;gap:8px" title="Direct Email">
             <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
-            diana@dianaballen.com
+            info@dianaballen.com
           </a>
         </div>
       </div>
@@ -629,9 +694,9 @@
               Watch Speaker Reel
             </a>
             <a class="btn btn-ghost" href="/speaker-kit">Speaker Dossier &amp; Kit</a>
-            <a class="btn btn-ghost" href="mailto:diana@dianaballen.com" style="display:inline-flex;align-items:center;gap:6px">
+            <a class="btn btn-ghost" href="mailto:info@dianaballen.com" style="display:inline-flex;align-items:center;gap:6px">
               <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
-              diana@dianaballen.com
+              info@dianaballen.com
             </a>
           </div>
         </div>
@@ -663,7 +728,7 @@
           <div class="book-sub">A 30-Day Executive Journal</div>
           <p>A 30-day executive journal for leaders who want to think beyond compliance activity and examine how governance, risk, accountability and decision-making actually operate inside their organizations.</p>
           <div class="book-ctas">
-            <a class="btn btn-primary" href="mailto:diana@dianaballen.com?subject=Beyond%20the%20Controls%20journal">Get Notified</a>
+            <a class="btn btn-primary" href="mailto:info@dianaballen.com?subject=Beyond%20the%20Controls%20journal">Get Notified</a>
           </div>
         </div>
       </div>
@@ -679,7 +744,7 @@
       <p>Advisory and delivery engagements are provided through Allen Leadership Solutions, the firm I founded to help organizations move from complexity to consequential action.</p>
       <div class="btn-row">
         <a class="btn btn-primary" href="https://www.allenleadershipsolutions.com/" target="_blank" rel="noopener">Explore Allen Leadership Solutions</a>
-        <a class="btn btn-ghost" style="border-color:#171412;color:#171412" href="https://calendly.com/drdianaballen" target="_blank" rel="noopener">Book a Call</a>
+        <a class="btn btn-ghost" href="https://calendly.com/drdianaballen" target="_blank" rel="noopener">Book a Call</a>
       </div>
     </div>
   </section>
@@ -691,7 +756,7 @@
       <p>Speaking, executive advisory, media, partnerships, or a complex problem that needs a sharper point of view. Start the conversation.</p>
       <div class="btn-row" style="justify-content:center">
         <a class="btn btn-primary" href="https://calendly.com/drdianaballen" target="_blank" rel="noopener">Book a Call</a>
-        <a class="btn btn-ghost" href="mailto:diana@dianaballen.com">Contact Diana</a>
+        <a class="btn btn-ghost" href="mailto:info@dianaballen.com">Contact Diana</a>
       </div>
     </div>
   </section>
@@ -717,5 +782,14 @@
     </div>
   </footer>
 
+  <script>
+    // Keep the native mobile menu usable without JavaScript; close after navigation when available.
+    document.querySelectorAll('.mobile-menu-panel a').forEach(function (link) {
+      link.addEventListener('click', function () {
+        var menu = link.closest('.mobile-menu');
+        if (menu) menu.open = false;
+      });
+    });
+  </script>
 </body>
 </html>
