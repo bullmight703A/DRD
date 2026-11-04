@@ -641,7 +641,7 @@ For Diana's AI agent's convenience, here is the full, validated source code of t
           <div class="hero-ctas">
             <a class="btn btn-primary" href="https://calendly.com/drdianaballen" target="_blank" rel="noopener">Book a Call</a>
             <a class="btn btn-ghost" href="#focus">Explore Practice Areas</a>
-            <a class="btn btn-ghost" href="mailto:diana@dianaballen.com">diana@dianaballen.com</a>
+            <a class="btn btn-ghost" href="mailto:info@dianaballen.com">info@dianaballen.com</a>
           </div>
         </div>
         <div class="hero-photo">
@@ -723,7 +723,7 @@ For Diana's AI agent's convenience, here is the full, validated source code of t
             <a class="btn btn-primary" href="https://calendly.com/drdianaballen" target="_blank" rel="noopener">Book a Call</a>
             <a class="btn btn-ghost" href="https://youtube.com/shorts/dzdrfEEKJrY" target="_blank" rel="noopener" style="border-color:var(--pink);color:var(--pink)">Watch Speaker Reel</a>
             <a class="btn btn-ghost" href="/speaker-kit">Speaker Dossier &amp; Kit</a>
-            <a class="btn btn-ghost" href="mailto:diana@dianaballen.com">diana@dianaballen.com</a>
+            <a class="btn btn-ghost" href="mailto:info@dianaballen.com">info@dianaballen.com</a>
           </div>
         </div>
         <div class="speak-photo">
@@ -754,7 +754,7 @@ For Diana's AI agent's convenience, here is the full, validated source code of t
           <div class="book-sub">A 30-Day Executive Journal</div>
           <p>A 30-day executive journal for leaders who want to think beyond compliance activity and examine how governance, risk, accountability and decision-making actually operate inside their organizations.</p>
           <div class="book-ctas">
-            <a class="btn btn-primary" href="mailto:diana@dianaballen.com?subject=Beyond%20the%20Controls%20journal">Get Notified</a>
+            <a class="btn btn-primary" href="mailto:info@dianaballen.com?subject=Beyond%20the%20Controls%20journal">Get Notified</a>
           </div>
         </div>
       </div>
@@ -782,7 +782,7 @@ For Diana's AI agent's convenience, here is the full, validated source code of t
       <p>Speaking, executive advisory, media, partnerships, or a complex problem that needs a sharper point of view. Start the conversation.</p>
       <div class="btn-row" style="justify-content:center">
         <a class="btn btn-primary" href="https://calendly.com/drdianaballen" target="_blank" rel="noopener">Book a Call</a>
-        <a class="btn btn-ghost" href="mailto:diana@dianaballen.com">Contact Diana</a>
+        <a class="btn btn-ghost" href="mailto:info@dianaballen.com">Contact Diana</a>
       </div>
     </div>
   </section>
