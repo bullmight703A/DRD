@@ -1,0 +1,793 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dr. Diana B. Allen | Cybersecurity, AI Governance &amp; Executive Leadership</title>
+  <meta name="description" content="Dr. Diana B. Allen is a cybersecurity, governance and transformation executive, author and speaker sharing practical perspectives on AI governance, compliance, executive risk, organizational transformation and leadership.">
+  <meta name="author" content="Dr. Diana B. Allen">
+  <link rel="canonical" href="https://diana.bullmight.com/">
+
+  <!-- Open Graph / LinkedIn / Facebook -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://diana.bullmight.com/">
+  <meta property="og:title" content="Dr. Diana B. Allen | Make the Hard Decision Defensible">
+  <meta property="og:description" content="Cybersecurity, AI governance, transformation and executive leadership from practitioner and author Dr. Diana B. Allen.">
+  <meta property="og:image" content="https://diana.bullmight.com/assets/headshot-black-feathered.png">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Dr. Diana B. Allen | Make the Hard Decision Defensible">
+  <meta name="twitter:description" content="Cybersecurity, AI governance, transformation and executive leadership from practitioner and author Dr. Diana B. Allen.">
+  <meta name="twitter:image" content="https://diana.bullmight.com/assets/headshot-black-feathered.png">
+
+  <meta name="theme-color" content="#12111A">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  
+  <!-- SVG Favicon -->
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='12' fill='%2312111A'/%3E%3Ctext x='32' y='46' font-family='Georgia,serif' font-size='40' font-weight='700' fill='%23ED1D7F' text-anchor='middle'%3ED.%3C/text%3E%3C/svg%3E">
+
+  <style>
+    :root {
+      --bg: #12111A;
+      --card: #1A1824;
+      --ink: #F4F1EC;
+      --body: #C9C2B8;
+      --muted: #948C9E;
+      --line: #2A2735;
+      --pink: #ED1D7F;
+      --pink-hover: #c91568;
+      --purple: #B48CD9;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      background: var(--bg);
+      color: var(--body);
+      line-height: 1.65;
+      font-size: 17px;
+      -webkit-font-smoothing: antialiased;
+    }
+    h1, h2, h3, .serif {
+      font-family: 'Fraunces', Georgia, serif;
+      color: var(--ink);
+      line-height: 1.15;
+      font-weight: 600;
+    }
+    a { color: var(--ink); text-decoration: none; transition: color .2s ease; }
+    .wrap { max-width: 1120px; margin: 0 auto; padding: 0 32px; }
+
+    /* Sticky Navigation */
+    nav {
+      position: sticky;
+      top: 0;
+      background: rgba(18, 17, 26, 0.94);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      border-bottom: 1px solid var(--line);
+      z-index: 100;
+    }
+    .nav-in {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 72px;
+    }
+    .brand {
+      font-family: 'Fraunces', serif;
+      font-weight: 700;
+      font-size: 21px;
+      color: var(--ink);
+      letter-spacing: -0.01em;
+    }
+    .brand em { color: var(--pink); font-style: normal; }
+    .nav-links {
+      display: flex;
+      gap: 28px;
+      align-items: center;
+      font-size: 14.5px;
+      font-weight: 500;
+    }
+    .nav-links a:hover { color: var(--pink); }
+    .nav-cta {
+      background: var(--pink);
+      color: #fff !important;
+      padding: 10px 20px;
+      border-radius: 6px;
+      font-weight: 600;
+      transition: background .2s ease, transform .15s ease;
+    }
+    .nav-cta:hover {
+      background: var(--pink-hover) !important;
+      transform: translateY(-1px);
+    }
+
+    .eyebrow {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-size: 13px;
+      font-weight: 600;
+      letter-spacing: .18em;
+      color: var(--muted);
+      text-transform: uppercase;
+      margin-bottom: 20px;
+    }
+    .eyebrow::before {
+      content: "";
+      width: 34px;
+      height: 3px;
+      background: var(--pink);
+      border-radius: 2px;
+    }
+
+    section { padding: 96px 0; }
+    .h2 { font-size: clamp(30px, 4vw, 44px); margin-bottom: 16px; }
+    .lede { font-size: 19px; max-width: 680px; }
+
+    /* Buttons */
+    .btn {
+      display: inline-block;
+      padding: 14px 28px;
+      border-radius: 6px;
+      font-weight: 600;
+      font-size: 15.5px;
+      transition: all .2s ease;
+      cursor: pointer;
+      text-align: center;
+    }
+    .btn-primary { background: var(--pink); color: #fff; }
+    .btn-primary:hover { background: var(--pink-hover); transform: translateY(-1px); }
+    .btn-ghost {
+      border: 1.5px solid var(--ink);
+      color: var(--ink);
+      background: transparent;
+    }
+    .btn-ghost:hover {
+      border-color: var(--pink);
+      color: var(--pink);
+      transform: translateY(-1px);
+    }
+    .btn-light { background: #171412; color: #fff; }
+    .btn-light:hover { background: #000; }
+
+    /* HERO */
+    .hero { padding: 84px 0 72px; }
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.15fr 0.85fr;
+      gap: 64px;
+      align-items: center;
+    }
+    .hero h1 {
+      font-size: clamp(40px, 5.4vw, 62px);
+      font-weight: 700;
+      letter-spacing: -0.01em;
+      line-height: 1.1;
+    }
+    .hero h1 span { color: var(--pink); }
+    .hero p.sub {
+      margin: 24px 0 36px;
+      font-size: 19.5px;
+      max-width: 560px;
+      color: var(--body);
+    }
+    .hero-ctas { display: flex; gap: 16px; flex-wrap: wrap; }
+    .hero-photo { position: relative; }
+    .hero-photo img {
+      width: 100%;
+      border-radius: 14px;
+      display: block;
+      box-shadow: 0 24px 60px rgba(0, 0, 0, 0.45);
+      object-fit: cover;
+    }
+    .hero-photo::after {
+      content: "";
+      position: absolute;
+      left: -18px;
+      top: 24px;
+      width: 100%;
+      height: 100%;
+      border: 1.5px solid var(--pink);
+      border-radius: 14px;
+      z-index: -1;
+      opacity: 0.85;
+    }
+
+    /* CREDIBILITY STRIP */
+    .strip {
+      border-top: 1px solid var(--line);
+      border-bottom: 1px solid var(--line);
+      padding: 24px 0;
+      background: var(--card);
+    }
+    .strip-in {
+      display: flex;
+      justify-content: center;
+      gap: 16px 40px;
+      flex-wrap: wrap;
+      font-size: 13.5px;
+      font-weight: 600;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+
+    /* ABOUT */
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1.2fr 0.8fr;
+      gap: 64px;
+      align-items: start;
+    }
+    .about p { margin-bottom: 18px; font-size: 18px; }
+    .cred-line {
+      font-size: 14.5px;
+      font-weight: 600;
+      letter-spacing: .04em;
+      color: var(--ink);
+      border-left: 3px solid var(--pink);
+      padding-left: 16px;
+      margin: 28px 0;
+      line-height: 1.6;
+    }
+    .about h3 { font-size: 22px; margin-bottom: 10px; }
+    .pov-card {
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      padding: 40px 36px;
+    }
+    .pov-card .serif { font-size: 24px; margin-bottom: 16px; }
+    .pov-card p { font-size: 17.5px; }
+
+    /* FOCUS */
+    .focus-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 28px;
+      margin-top: 48px;
+    }
+    .focus-card {
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      padding: 38px 34px;
+      transition: all .2s ease;
+    }
+    .focus-card:hover {
+      border-color: var(--pink);
+      transform: translateY(-3px);
+      box-shadow: 0 16px 36px rgba(0, 0, 0, 0.3);
+    }
+    .focus-num {
+      font-family: 'Fraunces', serif;
+      font-size: 16px;
+      color: var(--pink);
+      font-weight: 700;
+      margin-bottom: 14px;
+      display: block;
+    }
+    .focus-card h3 { font-size: 23px; margin-bottom: 12px; }
+    .focus-card p { font-size: 16px; }
+
+    /* INSIGHTS */
+    .insight-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 28px;
+      margin: 48px 0 36px;
+    }
+    .insight-card {
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      padding: 32px 30px;
+      display: flex;
+      flex-direction: column;
+      transition: all .2s ease;
+    }
+    .insight-card:hover {
+      border-color: var(--pink);
+      transform: translateY(-2px);
+    }
+    .tag {
+      display: inline-block;
+      font-size: 11.5px;
+      font-weight: 600;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      color: var(--purple);
+      margin-bottom: 16px;
+    }
+    .insight-card h3 { font-size: 21px; margin-bottom: 12px; line-height: 1.3; }
+    .insight-card p { font-size: 15.5px; color: var(--muted); flex: 1; }
+    .insight-card .go {
+      font-weight: 600;
+      font-size: 15px;
+      color: var(--pink);
+      margin-top: 20px;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    /* EXPERIENCE */
+    .exp-list {
+      margin-top: 44px;
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+      border-top: 1px solid var(--line);
+    }
+    .exp-item {
+      display: grid;
+      grid-template-columns: 320px 1fr;
+      gap: 32px;
+      padding: 28px 0;
+      border-bottom: 1px solid var(--line);
+    }
+    .exp-item h3 { font-size: 19px; font-weight: 600; }
+    .exp-item p { font-size: 16px; }
+
+    /* SPEAKING */
+    .speak-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 56px;
+      align-items: center;
+      margin-top: 48px;
+    }
+    .speak-photo img {
+      width: 100%;
+      border-radius: 14px;
+      display: block;
+      box-shadow: 0 24px 60px rgba(0, 0, 0, 0.4);
+      object-fit: cover;
+    }
+    .speak-ctas { display: flex; gap: 16px; margin-top: 32px; flex-wrap: wrap; }
+
+    /* BOOKS */
+    .book-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 32px;
+      margin-top: 48px;
+    }
+    .book-card {
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      padding: 44px 40px;
+      display: flex;
+      flex-direction: column;
+    }
+    .book-card h3 { font-size: 26px; margin: 6px 0; }
+    .book-sub {
+      font-family: 'Fraunces', serif;
+      font-style: italic;
+      font-size: 17px;
+      color: var(--pink);
+      margin-bottom: 16px;
+    }
+    .status {
+      font-size: 12.5px;
+      font-weight: 600;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      color: var(--purple);
+      margin-bottom: 6px;
+    }
+    .book-card p { font-size: 16px; flex: 1; }
+    .book-ctas { display: flex; gap: 14px; margin-top: 26px; flex-wrap: wrap; }
+
+    /* ADVISORY */
+    .advisory {
+      background: #FAF6F0;
+      color: #3E382F;
+    }
+    .advisory .h2, .advisory h2 { color: #171412; }
+    .advisory .eyebrow { color: #8A8178; }
+    .advisory .eyebrow::before { background: var(--pink); }
+    .advisory p { font-size: 18.5px; max-width: 720px; }
+    .advisory p + p { margin-top: 18px; }
+    .btn-row { display: flex; gap: 16px; flex-wrap: wrap; margin-top: 36px; }
+
+    /* FINAL CTA */
+    .final { padding: 110px 0; text-align: center; }
+    .final h2 {
+      font-size: clamp(32px, 4.4vw, 52px);
+      max-width: 760px;
+      margin: 0 auto 20px;
+    }
+    .final p { max-width: 560px; margin: 0 auto 36px; font-size: 18px; }
+
+    /* FOOTER */
+    footer {
+      border-top: 1px solid var(--line);
+      padding: 48px 0;
+      background: var(--card);
+    }
+    .foot-grid {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 24px;
+      flex-wrap: wrap;
+    }
+    .foot-links { display: flex; gap: 26px; font-size: 14.5px; font-weight: 500; }
+    .foot-links a:hover { color: var(--pink); }
+    .foot-meta {
+      font-size: 13.5px;
+      color: var(--muted);
+      margin-top: 20px;
+      display: flex;
+      gap: 20px;
+      flex-wrap: wrap;
+      align-items: center;
+    }
+    .foot-meta a { color: var(--muted); text-decoration: underline; }
+    .foot-meta a:hover { color: var(--pink); }
+
+    
+    
+    /* ======================================================= */
+    /* GHL DARK MODE ENFORCEMENT & OVERRIDES                   */
+    /* ======================================================= */
+    html,
+    body,
+    #__nuxt,
+    #preview-container,
+    .preview-container,
+    .hl_page-preview--content,
+    .bgCover,
+    .fullSection,
+    .c-section,
+    .c-wrapper,
+    .inner,
+    .row,
+    .col,
+    .c-custom-code,
+    .diana-site-root {
+      background: #12111A !important;
+      background-color: #12111A !important;
+      color: #C9C2B8 !important;
+      margin: 0 !important;
+      padding: 0 !important;
+      border: none !important;
+    }
+
+    .hero,
+    #about,
+    #focus,
+    #insights,
+    #experience,
+    #speaking,
+    #books,
+    .final {
+      background: #12111A !important;
+      background-color: #12111A !important;
+    }
+
+    .hero h1 {
+      color: #F4F1EC !important;
+    }
+
+    .hero p.sub {
+      color: #C9C2B8 !important;
+    }
+
+    .btn-ghost {
+      border: 1.5px solid #F4F1EC !important;
+      color: #F4F1EC !important;
+      background: transparent !important;
+    }
+
+    .btn-ghost:hover {
+      border-color: #ED1D7F !important;
+      color: #ED1D7F !important;
+    }
+
+    .hero-photo {
+      background: transparent !important;
+    }
+
+    .hero-photo img {
+      background: transparent !important;
+    }
+
+    .advisory {
+      background: #FAF6F0 !important;
+      background-color: #FAF6F0 !important;
+      color: #3E382F !important;
+    }
+
+    .advisory .h2, .advisory h2 {
+      color: #171412 !important;
+    }
+
+    .advisory p {
+      color: #3E382F !important;
+    }
+
+
+    /* Responsive */
+    @media(max-width: 900px) {
+      .hero-grid, .about-grid, .speak-grid, .book-grid { grid-template-columns: 1fr; }
+      .focus-grid, .insight-grid { grid-template-columns: 1fr; }
+      .exp-item { grid-template-columns: 1fr; gap: 8px; }
+      .nav-links { display: none; }
+      section { padding: 72px 0; }
+      .hero { padding: 56px 0; }
+      .hero-photo::after { display: none; }
+    }
+  </style>
+</head>
+<body>
+<div class="diana-site-root">
+
+  <!-- Navigation -->
+  <nav>
+    <div class="wrap nav-in">
+      <a class="brand" href="#top">Dr. Diana B. Allen<em>.</em></a>
+      <div class="nav-links">
+        <a href="#about">About</a>
+        <a href="#focus">Focus</a>
+        <a href="#insights">Insights</a>
+        <a href="#speaking">Speaking</a>
+        <a href="#books">Books</a>
+        <a href="#advisory">Advisory</a>
+        <a class="nav-cta" href="https://calendly.com/drdianaballen" target="_blank" rel="noopener">Book a Call</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <header class="hero" id="top">
+    <div class="wrap hero-grid">
+      <div>
+        <div class="eyebrow">Cybersecurity &bull; AI Governance &bull; Transformation</div>
+        <h1>Make the hard decision <span>defensible.</span></h1>
+        <p class="sub">I help leaders turn cybersecurity, AI governance, compliance and transformation into clear decisions, credible assurance and business value.</p>
+        <div class="hero-ctas">
+          <a class="btn btn-primary" href="#insights">Explore My Work</a>
+          <a class="btn btn-ghost" href="https://calendly.com/drdianaballen" target="_blank" rel="noopener">Book a Call</a>
+        </div>
+      </div>
+      <div class="hero-photo">
+        <img src="https://diana.bullmight.com/assets/headshot-black-feathered.png" onerror="this.src='https://media.base44.com/images/public/6a501887b0c61f51e33e48c7/1844457e9_headshot-black-feathered.png'" alt="Dr. Diana B. Allen - Cybersecurity and AI Governance Executive">
+      </div>
+    </div>
+  </header>
+
+  <!-- Credibility Strip -->
+  <div class="strip">
+    <div class="wrap strip-in">
+      <span>Cybersecurity Strategy</span>
+      <span>AI Governance</span>
+      <span>Compliance &amp; Public-Sector Trust</span>
+      <span>Executive Risk &amp; Transformation</span>
+    </div>
+  </div>
+
+  <!-- About Section -->
+  <section id="about">
+    <div class="wrap about-grid">
+      <div class="about">
+        <div class="eyebrow">About</div>
+        <h2 class="h2">I have sat in the rooms where these decisions actually get made.</h2>
+        <p>My work sits at the intersection of cybersecurity, governance, technology and organizational leadership.</p>
+        <p>Across two decades of complex technology and regulatory environments, I have worked with executives, engineers, security teams, public-sector stakeholders and business leaders to translate technical requirements, organizational realities and risk into decisions people can actually act on.</p>
+        <p>That practitioner perspective shapes how I write, speak and advise. Controls matter. Governance matters. Technology matters. But none of them create value on their own. Leadership is what turns them into outcomes.</p>
+        <p>I bring the perspective of an executive practitioner, not a commentator observing the work from the outside.</p>
+        <div class="cred-line">Doctor of Management, Organizational Leadership &bull; CISSP &bull; CGRC &bull; CBCP &bull; CFCP</div>
+        <a class="btn btn-ghost" href="https://www.linkedin.com/in/drdianaballen/" target="_blank" rel="noopener">About Diana on LinkedIn</a>
+      </div>
+      <div class="pov-card">
+        <div class="serif">What's on my mind</div>
+        <p>Every organization I work with is being asked to move faster than its controls, governance and decision rights were designed for. AI accelerated that gap.</p>
+        <p style="margin-top:16px">The work I find most valuable is not choosing between speed and safety. It is building the operating discipline that lets leaders move fast and still explain, defend and stand behind every consequential decision.</p>
+        <p style="color:var(--purple);font-weight:600;margin-top:20px;font-size:18px">Does it still work? Could it be better? Is it creating value?</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Where I Focus -->
+  <section id="focus" style="padding-top:0">
+    <div class="wrap">
+      <div class="eyebrow">Where I Focus</div>
+      <h2 class="h2">The decisions behind the work.</h2>
+      <div class="focus-grid">
+        <div class="focus-card">
+          <span class="focus-num">01</span>
+          <h3>Cybersecurity Strategy</h3>
+          <p>Turning security from a technical function into an executive capability that supports trust, resilience, growth and informed decision-making.</p>
+        </div>
+        <div class="focus-card">
+          <span class="focus-num">02</span>
+          <h3>AI Governance</h3>
+          <p>Helping leaders think clearly about AI accountability, decision rights, oversight, adoption and the governance required to move responsibly at speed.</p>
+        </div>
+        <div class="focus-card">
+          <span class="focus-num">03</span>
+          <h3>Compliance &amp; Public-Sector Trust</h3>
+          <p>Examining how regulatory requirements, evidence, assurance and public-sector expectations translate into operating decisions and business opportunity.</p>
+        </div>
+        <div class="focus-card">
+          <span class="focus-num">04</span>
+          <h3>Executive Risk &amp; Transformation</h3>
+          <p>Helping leaders navigate the organizational, political and operational realities that determine whether transformation actually survives execution.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Insights -->
+  <section id="insights">
+    <div class="wrap">
+      <div class="eyebrow">Insights</div>
+      <h2 class="h2">The work behind the point of view.</h2>
+      <p class="lede">I write about the decisions that sit underneath cybersecurity, AI governance, compliance, organizational transformation and executive leadership. The goal is not more commentary. It is to help leaders see the problem differently, ask better questions and make decisions they can explain, defend and execute.</p>
+      <div class="insight-grid">
+        <a class="insight-card" href="https://www.linkedin.com/in/drdianaballen/" target="_blank" rel="noopener">
+          <span class="tag">Newsletter</span>
+          <h3>The Leadership Lens</h3>
+          <p>Ongoing essays on leadership, trust and the decisions underneath the work.</p>
+          <span class="go">Read the newsletter &rarr;</span>
+        </a>
+        <a class="insight-card" href="https://cribl.io/blog/ai-governance-requires-evidence-building-trust-and-accountability-in-public-sector-ai/" target="_blank" rel="noopener">
+          <span class="tag">Featured Article</span>
+          <h3>AI Governance Requires Evidence</h3>
+          <p>Building trust and accountability in public-sector AI.</p>
+          <span class="go">Read the article &rarr;</span>
+        </a>
+        <a class="insight-card" href="https://www.linkedin.com/in/drdianaballen/" target="_blank" rel="noopener">
+          <span class="tag">Commentary</span>
+          <h3>Federal AI Has an ROI Problem: Stop Counting Hours Saved</h3>
+          <p>Turning productivity metrics into evidence of mission outcomes.</p>
+          <span class="go">Forthcoming &rarr;</span>
+        </a>
+      </div>
+      <a class="btn btn-ghost" href="https://www.linkedin.com/in/drdianaballen/" target="_blank" rel="noopener">Read All Insights</a>
+    </div>
+  </section>
+
+  <!-- Career Experience -->
+  <section id="experience">
+    <div class="wrap">
+      <div class="eyebrow">Selected Career Experience</div>
+      <h2 class="h2">Experience built inside complex environments.</h2>
+      <p class="lede">Examples of work I have led or delivered throughout my career include:</p>
+      <div class="exp-list">
+        <div class="exp-item">
+          <h3>Federal Authorization &amp; Compliance Strategy</h3>
+          <p>Led complex security authorization and compliance programs supporting cloud and SaaS products in regulated federal markets.</p>
+        </div>
+        <div class="exp-item">
+          <h3>Business Information Security Leadership</h3>
+          <p>Led enterprise security strategy, governance and risk oversight across complex global business environments.</p>
+        </div>
+        <div class="exp-item">
+          <h3>Federal Agency Security Advisory</h3>
+          <p>Delivered security engineering, governance and FISMA-aligned advisory work within U.S. federal environments.</p>
+        </div>
+        <div class="exp-item">
+          <h3>Cloud Security &amp; Compliance Strategy</h3>
+          <p>Designed and operationalized security and control approaches for large-scale cloud environments.</p>
+        </div>
+        <div class="exp-item">
+          <h3>Security Enablement &amp; Distributed Ownership</h3>
+          <p>Built programs that helped technology and business teams take greater ownership of security responsibilities without losing governance or accountability.</p>
+        </div>
+        <div class="exp-item">
+          <h3>Executive Risk Reporting</h3>
+          <p>Translated complex cybersecurity risks, threat scenarios and regulatory concerns into decision-ready executive narratives.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Speaking -->
+  <section id="speaking" style="border-top:1px solid #2A2735;border-bottom:1px solid #2A2735">
+    <div class="wrap">
+      <div class="eyebrow">Speaking</div>
+      <h2 class="h2">Bring me in to say the hard part out loud.</h2>
+      <div class="speak-grid">
+        <div>
+          <p class="lede" style="max-width:520px">I speak on the issues leaders are often managing privately but need to address publicly: AI governance, cybersecurity leadership, public-sector trust, regulatory complexity, transformation and the realities of leading high-stakes work.</p>
+          <p style="margin-top:16px;font-size:16px">Available for keynotes, panels, executive briefings, fireside conversations, leadership sessions and board-level discussions.</p>
+          <div class="speak-ctas">
+            <a class="btn btn-primary" href="https://calendly.com/drdianaballen" target="_blank" rel="noopener">Book a Call</a>
+            <a class="btn btn-ghost" href="https://diana.bullmight.com/speaker-kit">Speaker Dossier &amp; Kit</a>
+          </div>
+        </div>
+        <div class="speak-photo">
+          <img src="https://diana.bullmight.com/assets/portrait-emerald-feathered.png" onerror="this.src='https://media.base44.com/images/public/6a501887b0c61f51e33e48c7/083029aba_portrait-emerald-feathered.png'" alt="Dr. Diana B. Allen Speaking">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Books -->
+  <section id="books">
+    <div class="wrap">
+      <div class="eyebrow">Books</div>
+      <h2 class="h2">The point of view, at length.</h2>
+      <div class="book-grid">
+        <div class="book-card">
+          <div class="status">Available now</div>
+          <h3>Beyond the Dashboard</h3>
+          <div class="book-sub">How Real Transformation Gets Delivered at Scale</div>
+          <p>A practical exploration of what it takes to deliver transformation when strategy, execution, organizational dynamics and accountability collide. Written for leaders responsible for outcomes, especially when authority, alignment and execution do not fit neatly inside an org chart.</p>
+          <div class="book-ctas">
+            <a class="btn btn-primary" href="https://a.co/d/0hQIrw4D" target="_blank" rel="noopener">Get the Book on Amazon</a>
+          </div>
+        </div>
+        <div class="book-card">
+          <div class="status">Coming soon</div>
+          <h3>Beyond the Controls</h3>
+          <div class="book-sub">A 30-Day Executive Journal</div>
+          <p>A 30-day executive journal for leaders who want to think beyond compliance activity and examine how governance, risk, accountability and decision-making actually operate inside their organizations.</p>
+          <div class="book-ctas">
+            <a class="btn btn-primary" href="mailto:diana@dianaballen.com?subject=Beyond%20the%20Controls%20journal">Get Notified</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Advisory -->
+  <section class="advisory" id="advisory">
+    <div class="wrap">
+      <div class="eyebrow">Advisory</div>
+      <h2 class="h2">Some decisions need more than an article.</h2>
+      <p style="margin-top:20px">I advise executives and boards navigating high-stakes decisions: where the risk actually sits, what credible governance looks like in their specific context, and how to sequence transformation so it holds after the attention moves on.</p>
+      <p>Advisory and delivery engagements are provided through Allen Leadership Solutions, the firm I founded to help organizations move from complexity to consequential action.</p>
+      <div class="btn-row">
+        <a class="btn btn-primary" href="https://www.allenleadershipsolutions.com/" target="_blank" rel="noopener">Explore Allen Leadership Solutions</a>
+        <a class="btn btn-ghost" style="border-color:#171412;color:#171412" href="https://calendly.com/drdianaballen" target="_blank" rel="noopener">Book a Call</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Final CTA -->
+  <section class="final">
+    <div class="wrap">
+      <h2>Tell me what decision is in front of you.</h2>
+      <p>Speaking, executive advisory, media, partnerships, or a complex problem that needs a sharper point of view. Start the conversation.</p>
+      <div class="btn-row" style="justify-content:center">
+        <a class="btn btn-primary" href="https://calendly.com/drdianaballen" target="_blank" rel="noopener">Book a Call</a>
+        <a class="btn btn-ghost" href="mailto:diana@dianaballen.com">Contact Diana</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="wrap">
+      <div class="foot-grid">
+        <a class="brand" href="#top">Dr. Diana B. Allen<em>.</em></a>
+        <div class="foot-links">
+          <a href="https://www.linkedin.com/in/drdianaballen/" target="_blank" rel="noopener">LinkedIn</a>
+          <a href="https://www.youtube.com/@drdianaballen" target="_blank" rel="noopener">YouTube</a>
+          <a href="https://www.instagram.com/diana_b_allen/" target="_blank" rel="noopener">Instagram</a>
+          <a href="https://www.allenleadershipsolutions.com/" target="_blank" rel="noopener">Allen Leadership Solutions</a>
+        </div>
+      </div>
+      <div class="foot-meta">
+        <span>Cybersecurity &bull; AI Governance &bull; Transformation &bull; Executive Leadership</span>
+        <a href="https://diana.bullmight.com/privacy">Privacy Policy</a>
+        <a href="https://diana.bullmight.com/terms">Terms of Use</a>
+      </div>
+      <div style="font-size:13px;color:var(--muted);margin-top:16px">&copy; 2026 Dr. Diana B. Allen. All rights reserved.</div>
+    </div>
+  </footer>
+
+</div>
+</body>
+</html>

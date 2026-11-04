@@ -1,0 +1,491 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dr. Diana B. Allen | Executive Agent Terminal</title>
+  <link rel="icon" type="image/png" href="/assets/favicon.ico">
+  <style>
+    :root {
+      --bg: #0b0a10;
+      --card-bg: rgba(22, 20, 32, 0.85);
+      --card-border: rgba(255, 255, 255, 0.08);
+      --accent: #ED1D7F;
+      --accent-glow: rgba(237, 29, 127, 0.35);
+      --cyan: #38bdf8;
+      --green: #10b981;
+      --text: #f3f4f6;
+      --muted: #9ca3af;
+      --mono: 'JetBrains Mono', 'Fira Code', 'Consolas', monospace;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      background-color: var(--bg);
+      background-image: 
+        radial-gradient(circle at 15% 20%, rgba(237, 29, 127, 0.12) 0%, transparent 45%),
+        radial-gradient(circle at 85% 80%, rgba(56, 189, 248, 0.08) 0%, transparent 45%);
+      color: var(--text);
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 1.5rem;
+    }
+    .container {
+      width: 100%;
+      max-width: 920px;
+      background: var(--card-bg);
+      border: 1px solid var(--card-border);
+      border-radius: 16px;
+      backdrop-filter: blur(16px);
+      box-shadow: 0 25px 60px -15px rgba(0,0,0,0.7), 0 0 30px -10px var(--accent-glow);
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      height: 85vh;
+      max-height: 800px;
+    }
+    .term-header {
+      padding: 1rem 1.5rem;
+      background: rgba(14, 12, 22, 0.95);
+      border-bottom: 1px solid var(--card-border);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .header-left {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+    }
+    .dot-group {
+      display: flex;
+      gap: 6px;
+    }
+    .dot {
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+    }
+    .dot.red { background: #ff5f56; }
+    .dot.yellow { background: #ffbd2e; }
+    .dot.green { background: #27c93f; }
+    .title-badge {
+      font-size: 0.85rem;
+      font-weight: 600;
+      letter-spacing: 0.05em;
+      color: #e5e7eb;
+      text-transform: uppercase;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+    .pill {
+      font-size: 0.7rem;
+      background: rgba(237, 29, 127, 0.2);
+      color: var(--accent);
+      border: 1px solid rgba(237, 29, 127, 0.4);
+      padding: 2px 8px;
+      border-radius: 12px;
+      font-family: var(--mono);
+    }
+    .status-indicator {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-size: 0.75rem;
+      color: var(--green);
+      font-family: var(--mono);
+    }
+    .status-dot {
+      width: 8px;
+      height: 8px;
+      background: var(--green);
+      border-radius: 50%;
+      box-shadow: 0 0 10px var(--green);
+      animation: pulse 2s infinite;
+    }
+    @keyframes pulse {
+      0%, 100% { opacity: 1; transform: scale(1); }
+      50% { opacity: 0.5; transform: scale(0.9); }
+    }
+    .quick-actions {
+      padding: 0.75rem 1.5rem;
+      background: rgba(20, 18, 28, 0.7);
+      border-bottom: 1px solid var(--card-border);
+      display: flex;
+      gap: 0.5rem;
+      flex-wrap: wrap;
+    }
+    .action-btn {
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      color: var(--text);
+      font-size: 0.78rem;
+      padding: 6px 12px;
+      border-radius: 6px;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      transition: all 0.2s ease;
+      font-family: var(--mono);
+    }
+    .action-btn:hover {
+      background: rgba(237, 29, 127, 0.2);
+      border-color: var(--accent);
+      color: #fff;
+    }
+    .term-body {
+      flex: 1;
+      padding: 1.25rem 1.5rem;
+      overflow-y: auto;
+      font-family: var(--mono);
+      font-size: 0.88rem;
+      line-height: 1.6;
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+      background: rgba(11, 10, 16, 0.85);
+    }
+    .term-log {
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+    .log-line {
+      display: flex;
+      gap: 0.75rem;
+      word-break: break-word;
+    }
+    .log-time {
+      color: var(--muted);
+      opacity: 0.6;
+      flex-shrink: 0;
+      user-select: none;
+    }
+    .log-sender.sys { color: var(--cyan); font-weight: 600; }
+    .log-sender.user { color: var(--accent); font-weight: 600; }
+    .log-sender.iro { color: var(--green); font-weight: 600; }
+    .log-msg { color: var(--text); }
+    .term-input-container {
+      padding: 1rem 1.5rem;
+      background: rgba(14, 12, 22, 0.95);
+      border-top: 1px solid var(--card-border);
+      display: flex;
+      gap: 0.75rem;
+    }
+    .input-wrapper {
+      flex: 1;
+      display: flex;
+      align-items: center;
+      background: rgba(255, 255, 255, 0.04);
+      border: 1px solid var(--card-border);
+      border-radius: 8px;
+      padding: 0 1rem;
+      gap: 0.5rem;
+      transition: border-color 0.2s;
+    }
+    .input-wrapper:focus-within {
+      border-color: var(--accent);
+      box-shadow: 0 0 12px var(--accent-glow);
+    }
+    .prompt-prefix {
+      color: var(--accent);
+      font-family: var(--mono);
+      font-weight: 700;
+    }
+    .term-input {
+      flex: 1;
+      background: transparent;
+      border: none;
+      outline: none;
+      color: #fff;
+      font-family: var(--mono);
+      font-size: 0.9rem;
+      padding: 0.75rem 0;
+    }
+    .send-btn {
+      background: var(--accent);
+      color: #fff;
+      border: none;
+      padding: 0 1.25rem;
+      border-radius: 8px;
+      font-weight: 600;
+      font-size: 0.85rem;
+      cursor: pointer;
+      transition: opacity 0.2s;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .send-btn:hover { opacity: 0.9; }
+    /* Auth Modal */
+    .modal-overlay {
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,0.85);
+      backdrop-filter: blur(10px);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 100;
+    }
+    .modal {
+      width: 100%;
+      max-width: 440px;
+      background: #151320;
+      border: 1px solid rgba(237, 29, 127, 0.4);
+      box-shadow: 0 20px 50px rgba(0,0,0,0.8), 0 0 25px var(--accent-glow);
+      border-radius: 14px;
+      padding: 2rem;
+      text-align: center;
+    }
+    .modal h2 {
+      font-size: 1.25rem;
+      margin-bottom: 0.5rem;
+      color: #fff;
+    }
+    .modal p {
+      font-size: 0.85rem;
+      color: var(--muted);
+      margin-bottom: 1.5rem;
+      line-height: 1.5;
+    }
+    .pass-input {
+      width: 100%;
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(255,255,255,0.15);
+      padding: 0.75rem 1rem;
+      border-radius: 8px;
+      color: #fff;
+      font-family: var(--mono);
+      font-size: 0.95rem;
+      margin-bottom: 1rem;
+      outline: none;
+      text-align: center;
+      letter-spacing: 0.1em;
+    }
+    .pass-input:focus {
+      border-color: var(--accent);
+      box-shadow: 0 0 10px var(--accent-glow);
+    }
+    .auth-submit-btn {
+      width: 100%;
+      background: var(--accent);
+      color: #fff;
+      border: none;
+      padding: 0.75rem;
+      border-radius: 8px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: opacity 0.2s;
+    }
+    .auth-submit-btn:hover { opacity: 0.9; }
+    .error-msg {
+      color: #f87171;
+      font-size: 0.8rem;
+      margin-top: 0.75rem;
+      display: none;
+      font-family: var(--mono);
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Auth Modal -->
+  <div id="authModal" class="modal-overlay">
+    <div class="modal">
+      <div style="width:48px; height:48px; border-radius:50%; background:rgba(237,29,127,0.15); display:inline-flex; align-items:center; justify-content:center; margin-bottom:1rem; border:1px solid var(--accent);">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#ED1D7F" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect><path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg>
+      </div>
+      <h2>Executive Gateway</h2>
+      <p>Enter your executive passkey to unlock Dr. Diana B. Allen's Agent Terminal and synchronize with IRO.</p>
+      <input type="password" id="passkeyInput" class="pass-input" placeholder="Enter Passkey" autocomplete="off" autofocus>
+      <button id="authBtn" class="auth-submit-btn">Unlock Terminal</button>
+      <div id="errorMsg" class="error-msg">Invalid passkey. Access denied.</div>
+    </div>
+  </div>
+
+  <div class="container">
+    <div class="term-header">
+      <div class="header-left">
+        <div class="dot-group">
+          <span class="dot red"></span>
+          <span class="dot yellow"></span>
+          <span class="dot green"></span>
+        </div>
+        <div class="title-badge">
+          Dr. Diana B. Allen <span class="pill">A2A CONSOLE</span>
+        </div>
+      </div>
+      <div class="status-indicator">
+        <span class="status-dot"></span>
+        <span>CENTURION LIVE (IRO BRIDGE)</span>
+      </div>
+    </div>
+
+    <div class="quick-actions">
+      <button class="action-btn" onclick="runQuick('status')">📊 Check System Status</button>
+      <button class="action-btn" onclick="runQuick('keynote')">🎤 Add Keynote / Speech</button>
+      <button class="action-btn" onclick="runQuick('ping')">📡 Ping IRO Core</button>
+      <button class="action-btn" onclick="runQuick('openapi')">⚙️ View Agent API Schema</button>
+      <button class="action-btn" style="margin-left:auto; color:var(--muted);" onclick="logout()">🔒 Lock</button>
+    </div>
+
+    <div id="termBody" class="term-body">
+      <div class="term-log" id="logContainer">
+        <!-- Log Lines Populated Here -->
+      </div>
+    </div>
+
+    <div class="term-input-container">
+      <div class="input-wrapper">
+        <span class="prompt-prefix">drd@bullmight:~#</span>
+        <input type="text" id="cliInput" class="term-input" placeholder="Type an instruction, speech update, or prompt for IRO..." autocomplete="off">
+      </div>
+      <button id="sendBtn" class="send-btn">Execute</button>
+    </div>
+  </div>
+
+  <script>
+    let activeKey = sessionStorage.getItem('drd_passkey') || '';
+    const authModal = document.getElementById('authModal');
+    const passkeyInput = document.getElementById('passkeyInput');
+    const authBtn = document.getElementById('authBtn');
+    const errorMsg = document.getElementById('errorMsg');
+    const logContainer = document.getElementById('logContainer');
+    const termBody = document.getElementById('termBody');
+    const cliInput = document.getElementById('cliInput');
+    const sendBtn = document.getElementById('sendBtn');
+
+    function checkAuth() {
+      if (activeKey) {
+        authModal.style.display = 'none';
+        initTerminal();
+      } else {
+        authModal.style.display = 'flex';
+      }
+    }
+
+    async function submitAuth() {
+      const key = passkeyInput.value.trim();
+      if (!key) return;
+      try {
+        const res = await fetch('/api/agent/status', {
+          headers: { 'Authorization': 'Bearer ' + key }
+        });
+        if (res.ok) {
+          activeKey = key;
+          sessionStorage.setItem('drd_passkey', key);
+          authModal.style.display = 'none';
+          initTerminal();
+        } else {
+          errorMsg.style.display = 'block';
+        }
+      } catch (e) {
+        errorMsg.textContent = 'Connection error to gateway.';
+        errorMsg.style.display = 'block';
+      }
+    }
+
+    authBtn.addEventListener('click', submitAuth);
+    passkeyInput.addEventListener('keydown', (e) => { if (e.key === 'Enter') submitAuth(); });
+
+    function logout() {
+      sessionStorage.removeItem('drd_passkey');
+      activeKey = '';
+      authModal.style.display = 'flex';
+      passkeyInput.value = '';
+    }
+
+    function appendLog(sender, text, type = 'sys') {
+      const line = document.createElement('div');
+      line.className = 'log-line';
+      const time = new Date().toTimeString().split(' ')[0];
+      line.innerHTML = `
+        <span class="log-time">[${time}]</span>
+        <span class="log-sender ${type}">[${sender}]</span>
+        <span class="log-msg">${escapeHtml(text)}</span>
+      `;
+      logContainer.appendChild(line);
+      termBody.scrollTop = termBody.scrollHeight;
+    }
+
+    function escapeHtml(str) {
+      return str.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/\n/g, '<br>');
+    }
+
+    function initTerminal() {
+      logContainer.innerHTML = '';
+      appendLog('GATEWAY', 'Dr. Diana B. Allen Executive A2A Terminal connected.', 'sys');
+      appendLog('GATEWAY', 'Cloudflare Tunnel: active | Target Node: diana.bullmight.com', 'sys');
+      appendLog('IRO', 'Ready to synchronize. Send any keynote update, speaking announcement, or question.', 'iro');
+    }
+
+    async function sendCommand(text) {
+      if (!text || !text.trim()) return;
+      const cmd = text.trim();
+      appendLog('DRD-AI', cmd, 'user');
+      cliInput.value = '';
+
+      if (cmd.toLowerCase() === 'clear') {
+        initTerminal();
+        return;
+      }
+
+      if (cmd.toLowerCase() === 'openapi') {
+        appendLog('GATEWAY', 'OpenAPI 3.1 Spec Endpoint: https://diana.bullmight.com/api/agent/openapi.json', 'sys');
+        appendLog('GATEWAY', 'Configure Custom GPT / Claude: API Key Auth -> Bearer -> use your Passkey.', 'sys');
+        return;
+      }
+
+      try {
+        appendLog('GATEWAY', 'Relaying payload to IRO & Centurion Engine...', 'sys');
+        const res = await fetch('/api/agent/chat', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+            'Authorization': 'Bearer ' + activeKey
+          },
+          body: JSON.stringify({ message: cmd, sender: 'DrDiana-Terminal', action: 'chat' })
+        });
+        const data = await res.json();
+        if (res.ok) {
+          appendLog('IRO', data.reply || 'Task processed successfully.', 'iro');
+          if (data.queued) {
+            appendLog('GATEWAY', 'Task dispatched to bridge/to-iro.md for autonomous execution.', 'sys');
+          }
+        } else {
+          appendLog('ERROR', data.error || 'Request rejected by gateway.', 'sys');
+        }
+      } catch (err) {
+        appendLog('ERROR', 'Failed to communicate with bridge: ' + err.message, 'sys');
+      }
+    }
+
+    sendBtn.addEventListener('click', () => sendCommand(cliInput.value));
+    cliInput.addEventListener('keydown', (e) => {
+      if (e.key === 'Enter') sendCommand(cliInput.value);
+    });
+
+    function runQuick(action) {
+      if (action === 'status') {
+        sendCommand('Check system status and active website configuration');
+      } else if (action === 'ping') {
+        sendCommand('Ping IRO Core');
+      } else if (action === 'openapi') {
+        sendCommand('openapi');
+      } else if (action === 'keynote') {
+        cliInput.value = 'Add Keynote: "Title Here" | Event: "Conference Name" | Date: "Month DD, YYYY" | Location: "City, State"';
+        cliInput.focus();
+      }
+    }
+
+    checkAuth();
+  </script>
+</body>
+</html>
+
